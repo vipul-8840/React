@@ -5,6 +5,8 @@ import Form from "./form/form";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Callback from "./Hooks/Callback";
 import Side from "./Hooks/Side";
+import { useCounter } from "./Hooks/custom";
+import { ChildComponent } from "./mangement/prop";
 const About = lazy(()=>import('./components/About'))
 const Home = lazy(()=>import('./components/Home'))
 function App() {
@@ -38,10 +40,37 @@ function App() {
       <HighOrderComponent title="Kumar"/> */
       /* <Form/> */  
   // )
-  return (
-     <Side/>
-  )
+
+// const {count ,Increment,Decrement} = useCounter();
+
+//   return (
+//          <>
+//             <p>Count :{count}</p>
+//             <button onClick={Increment} disabled={count>10}>Add </button>
+//             <button onClick={Decrement} disabled={count<=0}>Decrease</button>
+//          </>
+//   )
+   // return (
+   //    <ChildComponent data="vipul"/>
+   // )
+
+   
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function HeaderButton()
 // { 
