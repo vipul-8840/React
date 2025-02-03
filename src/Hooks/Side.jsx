@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 const Side = () => {
     const [count,setCount] = useState(0);
     const[name,setName]=useState('vipul');
+    const[time,setTime] = useState(0)
     function Increment()
     {
         setCount(count+1);
@@ -14,6 +15,13 @@ const Side = () => {
     useEffect(()=>{
          console.log(name);
     },[name])
+//clean up login in useEffect
+
+    useEffect(()=>{
+        const timer = setInterval(()=>setTime((prev)=>prev+1),1000);
+        return ()=>clearInterval(timer);
+    },[])
+
   return (
     <div style={{
                 display:'flex',
@@ -38,6 +46,8 @@ const Side = () => {
                  placeholder=''
                  value={name} 
                  onChange={(e)=>{setName(e.target.value)}}/>
+                 <div>Timer:{time} </div>
+                 
         </div>
     </div>
   )
